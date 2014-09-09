@@ -16,6 +16,7 @@ public $items;
 
 function __construct() { }
   
+  //plain php database add has been marked as deprectated and not supported anymore
     public function add()
     {
 		include("dbs.php");
@@ -32,6 +33,32 @@ function __construct() { }
         return("<p>Ваша заявка принята, с вами свяжется ответственный исполнитель</p>");
     }
     
+	//wp database add
+	    public function wpadd()
+    {
+	require_once('../../../wp-load.php');
+		global $wpdb;
+		$tablename= $wpdb->prefix."orders";
+		$data=array('fio'=>$this->FIO,
+						'organization'=>$this->Organization,
+						'bik'=>$this->BIK,
+						'inn'=>$this->INN,
+						'account'=>$this->Schet,
+						'comment'=>$this->Comment
+						);
+		$wpdb->insert($tablename,$data);		
+		
+		$tablename= $wpdb->prefix."items";
+		foreach ($this->items as $key => $val)
+		{
+		$data=array('order_id'=>$wpdb->insert_id,
+						'name'=>$val->Product,
+						'quantity'=>$val->Quantity
+						);
+		$wpdb->insert($tablename,$data);		
+		}
+        return("<p>Ваша заявка принята, с вами свяжется ответственный исполнитель</p>");
+    }
 	
 	public function setSchet($Schet)
     {	

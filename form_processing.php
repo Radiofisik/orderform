@@ -28,7 +28,7 @@ while (true){
 	$QuantityName=$QuantityName."1";
 }
 
-$out=$OrderI->add(); 
+$out=$OrderI->wpadd(); 
 echo $out;
 	
 	

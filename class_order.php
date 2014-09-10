@@ -49,9 +49,10 @@ function __construct() { }
 		$wpdb->insert($tablename,$data);		
 		
 		$tablename= $wpdb->prefix."items";
+		$lastid=$wpdb->insert_id;
 		foreach ($this->items as $key => $val)
 		{
-		$data=array('order_id'=>$wpdb->insert_id,
+		$data=array('order_id'=>$lastid,
 						'name'=>$val->Product,
 						'quantity'=>$val->Quantity
 						);

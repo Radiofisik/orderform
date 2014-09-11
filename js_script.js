@@ -1,3 +1,4 @@
+jQuery(function ($) {
 jQuery( document ).ready(function() {
   // Handler for .ready() called.
  
@@ -30,5 +31,6 @@ $('#mainform').submit(function()
   
   
   
+});
 });
 

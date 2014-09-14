@@ -66,9 +66,14 @@
 					<input class="form-control Quantity" type="text"  name="Quantity" placeholder="1" pattern="^\d{1,3}$">
 				</div>
 				<div class="col-sm-1">
-					<button type="button" class="btn btn-default addbtn btn-block">
+				<div class="btn-group">
+					<button type="button" class="btn btn-default addbtn">
 						<span class="glyphicon glyphicon-plus"></span>
 					</button>
+					<button type="button" class="btn btn-default delbtn">
+						<span class="glyphicon glyphicon-minus"></span>
+					</button>
+				</div>
 				</div>
 			  </div>
 		  </div>

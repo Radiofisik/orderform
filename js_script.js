@@ -1,17 +1,22 @@
 jQuery(function ($) {
 jQuery( document ).ready(function() {
-  // Handler for .ready() called.
  
  $('.addbtn').click(function(){
-/*  alert('Вы нажали на элемент "foo"');*/
-  	var clone = jQuery('.prod:last').clone(true);
+  //	var clone = jQuery('.prod:last').clone(true);
+	var clone=$($(this).parents().get(3)).clone(true); 
 	 $( "#cont" ).append(clone);
-	var a=$('[name*="Quantity"]:last').attr("name")+"1";
-	$('[name*="Quantity"]:last').attr("name",a);
-	var b=$('[name*="Product"]:last').attr("name")+"1";
-	$('[name*="Product"]:last').attr("name",b);	
+	itemenum();
 }); 
   
+  
+ $('.delbtn').click(function(){
+//delete item if it is not last
+	 if($('.prod').length>1) $(this).parents().get(3).remove();
+	 else alert("Последний остался, жалко удалять...");
+//because user can delete any item, after deletion was made we should reenumerate names of rest items
+	itemenum();
+ }); 
+ 
 $('#mainform').submit(function()
 {
     dataString = $("#mainform").serialize();
@@ -29,7 +34,18 @@ $('#mainform').submit(function()
 });
 
   
-  
+//function makes form fields unique
+var itemenum = function ()
+{
+	var curQname="Quantity";
+	var curPname="Product";
+	$('.prod').each(function( index ) {
+	curQname+="1";
+	curPname+="1";
+	$(this).find($('[name*="Quantity"]')).attr("name",curQname);
+	$(this).find($('[name*="Product"]')).attr("name",curPname);
+	});
+};
   
 });
 });

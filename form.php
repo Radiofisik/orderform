@@ -55,7 +55,7 @@
 		  <div class="prod">
 			  <div class="form-group ">
 				<label class="col-sm-2 control-label" for="Product">Продукт</label>
-				<div class="col-sm-5">
+				<div class="col-sm-4">
 					<select class="form-control" name="Product">
 					  <option>Vipnet client</option>
 					  <option>Другие продукты Vipnet</option>
@@ -65,10 +65,15 @@
 				<div class="col-sm-2">
 					<input class="form-control Quantity" type="text"  name="Quantity" placeholder="1" pattern="^\d{1,3}$">
 				</div>
-				<div class="col-sm-1">
-					<button type="button" class="btn btn-default addbtn btn-block">
+				<div class="col-sm-2">
+				<div class="btn-group">
+					<button type="button" class="btn btn-default addbtn">
 						<span class="glyphicon glyphicon-plus"></span>
 					</button>
+					<button type="button" class="btn btn-default delbtn">
+						<span class="glyphicon glyphicon-minus"></span>
+					</button>
+				</div>
 				</div>
 			  </div>
 		  </div>

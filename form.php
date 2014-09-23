@@ -7,8 +7,7 @@
 
  
  <div class="row">
-    <div class="col-sm-1"></div>
-	<div class="col-sm-10">
+	<div class="col-sm-10 col-md-offset-1">
 	<h3>Для заказа заполните форму</h3>
 		<form class="form-horizontal" role="form" id="mainform" action="<?php echo $purl."/orderform/form_processing.php";?>" method="post">
 		  <div class="form-group">
@@ -58,14 +57,15 @@
 				<div class="col-sm-4">
 					<select class="form-control" name="Product">
 					  <option>Vipnet client</option>
+					   <option>VipNet coordinator HW1000</option>
 					  <option>Другие продукты Vipnet</option>
 					</select>
 				</div>
-				<label class="col-sm-2 control-label" for="Quantity">Количество</label>
+				<label class="col-sm-2 control-label" for="Quantity" value="1">Количество</label>
 				<div class="col-sm-2">
 					<input class="form-control Quantity" type="text"  name="Quantity" placeholder="1" pattern="^\d{1,3}$">
 				</div>
-				<div class="col-sm-2">
+				<div class="col-md-2">
 				<div class="btn-group">
 					<button type="button" class="btn btn-default addbtn">
 						<span class="glyphicon glyphicon-plus"></span>
@@ -80,10 +80,10 @@
 		  </div>
 		  
 		  
-		   <div class="row"><div class="col-sm-offset-2" id='output'></div></div>
-		   <div class="row"><div class="col-sm-offset-2">
+		  <div class="col-sm-offset-2" id='output'></div>
+		  <div class="col-sm-offset-2">
 		  	  <button type="submit" class="btn btn-primary btn-lg btn-block">Отправить</button>
-		  </div></div>
+		  </div>
 		  
 		  
 		  
@@ -93,6 +93,5 @@
 	
     
     </div>
-    <div class="col-sm-1"></div>
   </div>
 

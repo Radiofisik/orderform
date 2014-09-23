@@ -13,8 +13,8 @@ if (!$OrderI->setComment($_POST["Comment"])) {show_error("<br /> Неверны�
 
 
 $counter=0;
-$ProductName="Product";
-$QuantityName="Quantity";
+$ProductName="Product1";
+$QuantityName="Quantity1";
 while (true){
 	if(isset($_POST["$ProductName"]))
 	{

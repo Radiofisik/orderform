@@ -48,7 +48,7 @@ function activatepl()
 			  `id` int(11) NOT NULL AUTO_INCREMENT,
 			  `fio` varchar(50) COLLATE utf8_bin NOT NULL,
 			  `organization` varchar(512) COLLATE utf8_bin NOT NULL,
-			  `bik` varchar(8) COLLATE utf8_bin NOT NULL,
+			  `bik` varchar(9) COLLATE utf8_bin NOT NULL,
 			  `inn` varchar(12) COLLATE utf8_bin NOT NULL,
 			  `account` varchar(20) COLLATE utf8_bin NOT NULL,
 			  `comment` varchar(2048) COLLATE utf8_bin NOT NULL,

@@ -61,7 +61,8 @@ function get_message($number)
 
 //using soap_server to create server object 
 $server = new soap_server; 
-
+$server->soap_defencoding = 'utf-8';
+$server->decode_utf8 = false;
 //register a function that works on server 
 //$server->register('get_message'); 
 $server->configureWSDL('myname', 'urn:mynamespace');

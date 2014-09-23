@@ -55,7 +55,7 @@
 			  <div class="form-group ">
 				<label class="col-sm-2 control-label" for="Product">Продукт</label>
 				<div class="col-sm-4">
-					<select class="form-control" name="Product">
+					<select class="form-control" name="Product1">
 					  <option>Vipnet client</option>
 					   <option>VipNet coordinator HW1000</option>
 					  <option>Другие продукты Vipnet</option>
@@ -63,7 +63,7 @@
 				</div>
 				<label class="col-sm-2 control-label" for="Quantity" value="1">Количество</label>
 				<div class="col-sm-2">
-					<input class="form-control Quantity" type="text"  name="Quantity" placeholder="1" pattern="^\d{1,3}$">
+					<input class="form-control Quantity" type="text"  name="Quantity1" placeholder="1" pattern="^\d{1,3}$">
 				</div>
 				<div class="col-md-2">
 				<div class="btn-group">

@@ -19,7 +19,7 @@ jQuery( document ).ready(function() {
  
 $('#mainform').submit(function()
 {
-    dataString = $("#mainform").serialize();
+    dataString = $(this).serialize();
     $.ajax(
 		{
 			type: "POST",

@@ -11,7 +11,7 @@ function LoadOrders()
 		global $wpdb;
 		$tablename= $wpdb->prefix."orders";
 		$orderq = $wpdb->get_results("
-									SELECT id, fio, organization, bik, inn, account, comment
+									SELECT id, Organizationfull, Organizationshort, FIOdir, Positiondir, Reasondir, Phonedir,FIOcont,Positioncont,Phonecont,Email,INN,KPP,OGRN,Schet,Korrschet,BIK,Bankname,Addrlegal,Addrfact,Comment
 									FROM $tablename
 									");
 
@@ -20,12 +20,26 @@ function LoadOrders()
 		$OrderI = new Order();
 			//echo $orderqi->organization;
 			
-			$OrderI->setFIO($orderqi->fio);
-			$OrderI->setOrganization($orderqi->organization);
-			$OrderI->setBIK($orderqi->bik);
-			$OrderI->setINN($orderqi->inn);
-			$OrderI->setSchet($orderqi->account);
-			$OrderI->setComment($orderqi->comment);
+			$OrderI->setOrganizationfull($orderqi->Organizationfull);
+			$OrderI->setOrganizationshort($orderqi->Organizationshort);
+			$OrderI->setFIOdir($orderqi->FIOdir);
+			$OrderI->setPositiondir($orderqi->Positiondir);
+			$OrderI->setReasondir($orderqi->Reasondir);
+			$OrderI->setPhonedir($orderqi->Phonedir);
+			$OrderI->setFIOcont($orderqi->FIOcont);
+			$OrderI->setPositioncont($orderqi->Positioncont);
+			$OrderI->setPhonecont($orderqi->Phonecont);
+			$OrderI->setEmail($orderqi->Email);
+			$OrderI->setINN($orderqi->INN);
+			$OrderI->setKPP($orderqi->KPP);
+			$OrderI->setOGRN($orderqi->OGRN);
+			$OrderI->setSchet($orderqi->Schet);
+			$OrderI->setKorrschet($orderqi->Korrschet);
+			$OrderI->setBIK($orderqi->BIK);
+			$OrderI->setBankname($orderqi->Bankname);
+			$OrderI->setAddrlegal($orderqi->Addrlegal);
+			$OrderI->setAddrfact($orderqi->Addrfact);
+			$OrderI->setComment($orderqi->Comment);
 			$order_id=$orderqi->id;
 			
 			$tablenameitem= $wpdb->prefix."items";
@@ -96,12 +110,28 @@ $server->wsdl->addComplexType(
     'struct',
     'all',
     '',
-    array('FIO' => array('name'=>'FIO','type'=>'xsd:string'),
-    'Organization' => array('name'=>'Organization','type'=>'xsd:string'),
-    'BIK' => array('name'=>'BIK','type'=>'xsd:string'),
-    'INN' => array('name'=>'INN','type'=>'xsd:string'),
-    'Schet' => array('name'=>'Schet','type'=>'xsd:string'),
-    'Comment' => array('name'=>'Comment','type'=>'xsd:string'),
+    array(
+	'Organizationfull' => array('name'=>'Organizationfull','type'=>'xsd:string'),
+    'Organizationshort' => array('name'=>'Organizationshort','type'=>'xsd:string'),
+    'FIOdir' => array('name'=>'FIOdir','type'=>'xsd:string'),
+    'Positiondir' => array('name'=>'Positiondir','type'=>'xsd:string'),
+    'Reasondir' => array('name'=>'Reasondir','type'=>'xsd:string'),
+    'Phonedir' => array('name'=>'Phonedir','type'=>'xsd:string'),
+	'FIOcont' => array('name'=>'FIOcont','type'=>'xsd:string'),
+	'Positioncont' => array('name'=>'Positioncont','type'=>'xsd:string'),
+	'Phonecont' => array('name'=>'Phonecont','type'=>'xsd:string'),
+	'Email' => array('name'=>'Email','type'=>'xsd:string'),
+	'INN' => array('name'=>'INN','type'=>'xsd:string'),
+	'KPP' => array('name'=>'KPP','type'=>'xsd:string'),
+	'OGRN' => array('name'=>'OGRN','type'=>'xsd:string'),
+	'Schet' => array('name'=>'Schet','type'=>'xsd:string'),
+	'Korrschet' => array('name'=>'Korrschet','type'=>'xsd:string'),
+	'BIK' => array('name'=>'BIK','type'=>'xsd:string'),
+	'Bankname' => array('name'=>'Bankname','type'=>'xsd:string'),
+	'Addrlegal' => array('name'=>'Addrlegal','type'=>'xsd:string'),
+	'Addrfact' => array('name'=>'Addrfact','type'=>'xsd:string'),
+	'Comment' => array('name'=>'Comment','type'=>'xsd:string'),
+		
 	'items' => array('name'=>'items','type'=>'tns:orderItemArray')
         )
 );

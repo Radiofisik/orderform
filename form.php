@@ -10,16 +10,103 @@
 	<div class="col-sm-10 col-md-offset-1">
 	<h3>Для заказа заполните форму</h3>
 		<form class="form-horizontal" role="form" id="mainform" action="<?php echo $purl."/orderform/form_processing.php";?>" method="post">
-		  <div class="form-group">
-			<label class="col-sm-2 control-label" for="FIO">Ваше имя</label>
+		
+		<br/>
+		<h4>Организация</h4> <hr/>
+			<div class="form-group">
+			<label class="col-sm-2 control-label" for="Organizationfull">Полное наименование</label>
 			<div class="col-sm-10">
-			  <input class="form-control" type="text" id="FIO" name="FIO" placeholder="Фамилия Имя Отчество" pattern="^([а-яА-ЯёЁ]{1,50}\s{0,1}){1,3}$">
+			  <input class="form-control" type="text" id="Organizationfull" name="Organizationfull" placeholder="Общество с ограниченной ответственностью &quot;Компания&quot;" pattern="^.{3,512}$">
+			</div>
+		  </div>
+			<div class="form-group">
+			<label class="col-sm-2 control-label" for="Organizationshort">Краткое наименование по уставу</label>
+			<div class="col-sm-10">
+			  <input class="form-control" type="text" id="Organizationshort" name="Organizationshort" placeholder="ООО &quot;Компания&quot;" pattern="^.{3,512}$">
+			</div>
+		  </div>
+		  
+		 <h4>Руководитель</h4> <hr/>
+		  <div class="form-group">
+			<label class="col-sm-2 control-label" for="FIOdir">ФИО</label>
+			<div class="col-sm-10">
+			  <input class="form-control" type="text" id="FIOdir" name="FIOdir" placeholder="Фамилия Имя Отчество" pattern="^([а-яА-ЯёЁ]{1,50}\s{0,1}){1,3}$">
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label class="col-sm-2 control-label" for="Organization">Организация</label>
+			<label class="col-sm-2 control-label" for="Positiondir">Должность</label>
 			<div class="col-sm-10">
-			  <input class="form-control" type="text" id="Organization" name="Organization" placeholder="ООО &quot;Компания&quot;" pattern="^.{3,512}$">
+			  <input class="form-control" type="text" id="Positiondir" name="Positiondir" placeholder="Должность" pattern="^.{3,100}$">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label class="col-sm-2 control-label" for="Reasondir">Основание полномочий</label>
+			<div class="col-sm-10">
+			  <input class="form-control" type="text" id="Reasondir" name="Reasondir" placeholder="Устава, доверенности и т.п." pattern="^.{3,100}$">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label class="col-sm-2 control-label" for="Phonedir">Телефон</label>
+			<div class="col-sm-10">
+			  <input class="form-control" type="text" id="Phonedir" name="Phonedir" placeholder="Телефон" pattern="^(\d|\W){6,20}$">
+			</div>
+		  </div>
+		  
+		  <h4>Контактное лицо</h4><hr/>
+		  <div class="form-group">
+			<label class="col-sm-2 control-label" for="FIOcont">ФИО</label>
+			<div class="col-sm-10">
+			  <input class="form-control" type="text" id="FIOcont" name="FIOcont" placeholder="Фамилия Имя Отчество" pattern="^([а-яА-ЯёЁ]{1,50}\s{0,1}){1,3}$">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label class="col-sm-2 control-label" for="Positioncont">Должность</label>
+			<div class="col-sm-10">
+			  <input class="form-control" type="text" id="Positioncont" name="Positioncont" placeholder="Должность" pattern="^.{3,100}$">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label class="col-sm-2 control-label" for="Phonecont">Телефон</label>
+			<div class="col-sm-10">
+			  <input class="form-control" type="text" id="Phonecont" name="Phonecont" placeholder="Телефон" pattern="^(\d|\W){6,20}$">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label class="col-sm-2 control-label" for="Email">E-mail</label>
+			<div class="col-sm-10">
+			  <input class="form-control" type="text" id="Email" name="Email" placeholder="xxx@yyy.zzz" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$">
+			</div>
+		  </div>
+		  
+		  <h4>Реквизиты</h4><hr/>
+		  <div class="form-group">
+			<label class="col-sm-2 control-label" for="INN">ИНН</label>
+			<div class="col-sm-10">
+			  <input class="form-control" type="text" id="INN" name="INN" placeholder="000000000000" pattern="^[0-9]{10,12}$">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label class="col-sm-2 control-label" for="KPP">КПП</label>
+			<div class="col-sm-10">
+			  <input class="form-control" type="text" id="KPP" name="KPP" placeholder="000000000" pattern="^\d{9}$">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label class="col-sm-2 control-label" for="OGRN">ОГРН</label>
+			<div class="col-sm-10">
+			  <input class="form-control" type="text" id="OGRN" name="OGRN" placeholder="0000000000000" pattern="^\d{13,15}$">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label class="col-sm-2 control-label" for="Schet">Р/С</label>
+			<div class="col-sm-10">
+			  <input class="form-control" type="text" id="Schet" name="Schet" placeholder="00000000000000000000" pattern="^\d{20}$">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label class="col-sm-2 control-label" for="Korrschet">Корреспондентский / лицевой счет</label>
+			<div class="col-sm-10">
+			  <input class="form-control" type="text" id="Korrschet" name="Korrschet" placeholder="00000000000000000000" pattern="^\d{20}$">
 			</div>
 		  </div>
 		  <div class="form-group">
@@ -29,17 +116,27 @@
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label class="col-sm-2 control-label" for="INN">ИНН</label>
+			<label class="col-sm-2 control-label" for="Bankname">Полное наименование банка</label>
 			<div class="col-sm-10">
-			  <input class="form-control" type="text" id="INN" name="INN" placeholder="000000000000" pattern="^[0-9]{10,12}$">
+			  <input class="form-control" type="text" id="Bankname" name="Bankname" placeholder="Акционерный коммерческий банк «Банк» " pattern="^.{3,512}$">
 			</div>
 		  </div>
+		  
+		  <h4>Местоположение</h4><hr/>
 		  <div class="form-group">
-			<label class="col-sm-2 control-label" for="Schet">Р/С</label>
+			<label class="col-sm-2 control-label" for="Addrlegal">Юридический адрес</label>
 			<div class="col-sm-10">
-			  <input class="form-control" type="text" id="Schet" name="Schet" placeholder="00000000000000000000" pattern="^\d{20}$">
+			  <input class="form-control" type="text" id="Addrlegal" name="Addrlegal" placeholder="Юридический адрес" pattern="^.{3,512}$">
 			</div>
 		  </div>
+			<div class="form-group">
+			<label class="col-sm-2 control-label" for="Addrfact">Фактический адрес</label>
+			<div class="col-sm-10">
+			  <input class="form-control" type="text" id="Addrfact" name="Addrfact" placeholder="Фактический адрес" pattern="^.{3,512}$">
+			</div>
+		  </div>
+		  
+		  <br/>
 		  <div class="form-group" >
 			<label class="col-sm-2 control-label" for="Comment">Комментарий</label>
 			<div class="col-sm-10">
@@ -49,7 +146,7 @@
 		  
 		  
 		 		  
-		  
+		   <br/>
 		  <div id="cont">
 		  <div class="prod">
 			  <div class="form-group ">
